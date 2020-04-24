@@ -5,7 +5,7 @@ const { Photo } = require('./../models/photo');
 
 controller.post = (req, res, next) => {
 
-    // (1)
+    
 
     // Consultar todos los productos
     Post.findAll()
@@ -31,28 +31,8 @@ controller.post = (req, res, next) => {
             });
         });
 
-    // (2)
+   
 };
-
-// controller.postVersionFacil = (req, res, next) => {
-//     (async() => {
-//         try {
-//             let posts = await Prod.findAll();
-
-//             res.render('publicaciones/inicio', {
-//                 titulo: 'Lista de productos',
-//                 posts: posts,
-//             });
-//         } catch (err) {
-//             console.error('Error en la consulta', err);
-
-//             res.render('publicaciones/inicio', {
-//                 titulo: 'Lista de productos',
-//                 posts: [],
-//             });
-//         }
-//     })();
-// };
 
 controller.nuevoPost = (req, res, next) => {
     res.render('publicaciones/newpost');
@@ -63,10 +43,6 @@ controller.nuevoPublicacionPost = (req, res, next) => {
     (async() => {
         try {
 
-            //Obtener información desde un formulario (body)
-            // console.log('req.body', req.body);
-
-            //Extraer variables desde el body
             let nombre = req.body.nombre;
             let texto = req.body.texto;
             let usuario = req.body.usuario;
