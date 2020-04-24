@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+
+<body>
+    <h1>
+        <!-- ejsout -->
+        <%= titulo %>
+    </h1>
+    <a href="/nuevo">Nuevo Post</a>
+    <ul>
+        <!-- ejseach -->
+        <% posts.forEach(post => { %>
+            <li>
+                <p>
+                    <%= post.nombre %>
+                    <br>
+                    <%= post.texto %> 
+                    <br>
+                    <%= post.usuario %>
+                    <br>
+                </p>
+                <a href="/detalle/<%= post.id %> ">Comentar</a>
+                <a href="/editar/<%= post.id %> ">Editar publicacion</a>
+                <a href="/borrar/<%= post.id %> ">Borrar publicacion</a>
+                 <p>
+                    <%= post.createdAt %>
+                </p>
+            </li>
+            <% }) %>
+            
+    </ul>
+</body>
+
+</html>

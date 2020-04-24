@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+<body>
+    <h1><%= post.nombre %></h1>
+    <p><%= post.texto %></p>
+    <p><%= post.usuario %></p>
+    <p><%= post.createdAt %></p>
+
+    <h3>Agregar foto</h3>
+    <form action="/agregarfoto" method="POST">
+        <input type="hidden" name="id" value="<%= post.id %>">
+        <label for="">Link de imagen:</label>
+        <input type="text" name="url">
+        <br>
+        <label for="">Comentario:</label>
+        <input type="text" name="descripcion">
+        <br>
+        <label for=""> Usuario:</label>
+        <input type="text" name="usuarioA">
+        <br>
+        <button>Subir</button>
+    </form>
+    <br>
+
+    <% photos.forEach(photo => { %>
+        <p><%= photo.usuarioA %></p>
+        <p><%= photo.descripcion %></p>
+        <img src="<%= photo.url %> " alt="">
+        
+    <% }) %>
+    <br>
+
+</body>
+</html>
